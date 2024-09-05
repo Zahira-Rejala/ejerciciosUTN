@@ -80,19 +80,20 @@ Esta funcion va a retornar la cantidad de letras que tenga la palabra
 #       calculará cual de ellas tiene mayor cantidad de letras y tendra que imprimirla en consola
 #       junto con la cantidad de letras que posee
 
-def tres_palabras() -> str:
-    primera = input("Ingrese la primera palabra: ")
-    segunda = input("Ingrese la segunda palabra: ")
-    tercera = input("Ingrese la tercera palabra: ")
-    if len(primera) > len(segunda) or len(primera) > len(tercera):
-        mayor_cantidad_letras = primera
-    elif len(segunda) > len(primera) or len(segunda) > len(primera):
-        mayor_cantidad_letras = segunda
-    elif len(tercera) > len(primera) or len(tercera) > len(segunda):
-        mayor_cantidad_letras = tercera
-    else :
-        print("Empate")
-    print(mayor_cantidad_letras)
+def tres_palabras():
+    
+    cantidad_caracteres_mayor = None
+    palabra_mas_larga = None
+
+    for i in range(3):
+        palabra = input(f"Ingrese la {i + 1}° palabra: ")
+        cantidad_letras_palabra_actual = letras_de_una_palabra(palabra)
+        if cantidad_caracteres_mayor == None or cantidad_letras_palabra_actual > cantidad_caracteres_mayor:
+            cantidad_caracteres_mayor = cantidad_letras_palabra_actual
+            palabra_mas_larga = palabra
+
+    texto = f"La palabra con mas cantidad de caracteres es: {palabra_mas_larga} y tiene un total de {cantidad_caracteres_mayor} caracteres."
+    print(texto)
 
 año()
 saludo("jose")
