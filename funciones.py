@@ -69,12 +69,13 @@ Esta funcion va a retornar la cantidad de letras que tenga la palabra
     Returns:
         str: _description_
     """
-    contador_caracteres = 0
 
-    for caracter in palabra:
-        contador_caracteres += 1
+    contador_caracteres = len(palabra)
 
-        return contador_caracteres
+    print(f"La cantidad de letras que tiene la palabra {palabra} es de {contador_caracteres}")
+    return contador_caracteres
+
+
     
 # 11 - Crear una funcion sin parametros que pida al usuario que ingrese tres palabras, luego
 #       calculará cual de ellas tiene mayor cantidad de letras y tendra que imprimirla en consola
@@ -88,16 +89,16 @@ def tres_palabras():
     for i in range(3):
         palabra = input(f"Ingrese la {i + 1}° palabra: ")
         cantidad_letras_palabra_actual = letras_de_una_palabra(palabra)
-        if cantidad_caracteres_mayor == None or cantidad_letras_palabra_actual > cantidad_caracteres_mayor:
+        if (cantidad_caracteres_mayor == None) or (cantidad_letras_palabra_actual > cantidad_caracteres_mayor):
             cantidad_caracteres_mayor = cantidad_letras_palabra_actual
             palabra_mas_larga = palabra
 
-    texto = f"La palabra con mas cantidad de caracteres es: {palabra_mas_larga} y tiene un total de {cantidad_caracteres_mayor} caracteres."
+    texto = f"La palabra con mas cantidad de caracteres es {palabra_mas_larga} y tiene un total de {cantidad_caracteres_mayor} caracteres."
     print(texto)
 
 año()
 saludo("jose")
 area_del_circulo(7)
-letras_de_una_palabra("asas")
+letras_de_una_palabra("libreria")
 tres_palabras()
 
